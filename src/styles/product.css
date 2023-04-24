@@ -31,9 +31,8 @@
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    position: absolute;
-    margin: 10px;
-    margin-left: 200px;
+    position: relative;
+    padding-left: 10px;
     bottom:0;
     left: 0;
 }
@@ -67,6 +66,7 @@
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
+    font-family: "Rubik", sans-serif;
 }
 
 .button:hover {
@@ -84,4 +84,5 @@
     background-color: white;
     border: solid 1px;
     border-radius: 5px;
+    font-family: "Rubik", sans-serif;
 }

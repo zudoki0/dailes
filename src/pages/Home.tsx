@@ -16,6 +16,7 @@ const Home = () => {
             slur={item.slur}
             description={item.description}
             cartQuantity={item.cartQuantity}
+            rating={item.rating}
           />
         ))
       }

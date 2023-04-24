@@ -6,6 +6,7 @@ export interface product {
     slur: string,
     description: string,
     cartQuantity: number,
+    rating: number,
 }
 
 export interface carting {

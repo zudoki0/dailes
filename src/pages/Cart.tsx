@@ -31,6 +31,7 @@ const Cart = () => {
               slur={item.slur}
               description={item.description}
               cartQuantity={item.cartQuantity}
+              rating={item.rating}
             />
             <button className='cart-button' onClick={() => handleRemoveItem(item)}>
               Pašalinti iš krepšelio
