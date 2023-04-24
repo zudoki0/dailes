@@ -1,0 +1,38 @@
+.header {
+    height: 100px;
+    background-color: rgb(255, 216, 190);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-home {
+    font-weight: 600;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.header-links {
+    color: black;
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 160px;
+}
+
+.links:hover {
+    transform: scale(1.1);
+}
+
+.contact {
+    display:flex;
+    margin-right: 20px;
+    border-left: 0.1rem solid rgb(85, 61, 50);
+    padding-left: 10px;
+}
+
+.links {
+    color: black;
+}

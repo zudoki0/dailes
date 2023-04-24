@@ -1,0 +1,16 @@
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.image {
+    height: 100%
+}
+
+.image-container {
+    padding: 1rem;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
