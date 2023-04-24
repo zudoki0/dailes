@@ -4,11 +4,12 @@ import {Product} from '../components/ProductData'
 import '../styles/catalogue.css'
 import '../styles/filters.css'
 import { categories } from '../assets/categories'
-import { Link } from 'react-router-dom'
 import { product } from '../interfaces/interfaces'
+import { Link } from 'react-router-dom'
 
 const Catalogue = () => {
   let prod = products;
+  const [filter, setFilter] = useState('');
   const [sortBy, setSortBy] = useState('Populiariausios prekės');
   
   const changeProduct = (item:string) => {
@@ -31,9 +32,17 @@ const Catalogue = () => {
     }
   }
 
+  changeProduct(sortBy);
+
+  if (filter !== '') prod = prod.filter((item) => item.category === filter);
+  else prod = products;
+
   const changeSortBy = (item:string) => {
     setSortBy(item);
-    changeProduct(item);
+  }
+
+  const changeFilter = (item:string) => {
+    setFilter(item);
   }
 
   return (
@@ -41,8 +50,8 @@ const Catalogue = () => {
       <div className='catalogue-container'>
         {
           categories.map((item) => (
-            <Link to={'../category/' + item.categorySlug}>
-              <label className='category'>
+            <Link to={'../category/'+item.categorySlug}>
+              <label className='category' onClick={() => changeFilter(item.categorySlug)}>
               <div>{item.display}</div>
               </label>
             </Link>

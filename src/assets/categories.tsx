@@ -1,5 +1,9 @@
 export const categories = [
     {
+        display:'Visos',
+        categorySlug:'',
+    },
+    {
         display: 'Dažai',
         categorySlug: 'dazai'
     },
@@ -16,15 +20,7 @@ export const categories = [
         categorySlug: 'teptukai'
     },
     {
-        display: 'Priemonės grafikai',
-        categorySlug: 'priemones-grafikai'
-    },
-    {
         display: 'Popierius',
         categorySlug: 'popierius'
-    },
-    {
-        display: 'Įrangai braižybai',
-        categorySlug: 'irangai-braizybai'
     },
 ]
