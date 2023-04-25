@@ -43,6 +43,7 @@
 .item-total {
     font-size: 16px;
     font-weight: bold;
+    position: relative;
     margin: 10px;
     border-radius: 5px;
     background-color: antiquewhite;
@@ -70,4 +71,37 @@
 
 .list {
     margin-bottom: 200px;
+}
+
+.cart-info-container {
+    display: flex;
+}
+
+.cart-info-container-item {
+    position: absolute;
+    width: 80%;
+}
+
+.order-button {
+    background-color: antiquewhite;
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 19%;
+    height: 80px;
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 10px;
+    border: 0px;
+    
+}
+
+.order-button:hover {
+    background-color: rgba(255, 227, 227, 0.9);
+}
+
+.product-list-container {
+    margin-top: 120px;
 }

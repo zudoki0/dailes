@@ -5,6 +5,7 @@ import CartData from '../components/CartData'
 import { useDispatch } from 'react-redux'
 import { removeFromCart } from '../redux/cartSlice'
 import '../styles/cart.css'
+import OrderButton from '../components/OrderButton';
 
 const Cart = () => {
   const [visible, setVisible] = useState(true);
@@ -14,11 +15,18 @@ const Cart = () => {
       dispatch(removeFromCart(item));
       if(visible === true) setVisible(false); else setVisible(true);
   }
-
   return (
     <div className='list'>
-      <div className='item-total'> Iš viso prekių: {products.totalAmount} vnt. </div>
-      <div className='item-total'>  Iš viso kaina: {Math.abs(products.totalPrice).toFixed(2)} € </div>
+      <div className='cart-info-container'>
+        <div className='cart-info-container-item'>
+        <div className='item-total'> Iš viso prekių: {products.totalAmount} vnt. </div>
+        <div className='item-total'>  Iš viso kaina: {Math.abs(products.totalPrice).toFixed(2)} € </div> 
+        </div>
+        {
+          products.productList.length > 0 ? <OrderButton/> : ''
+        }
+      </div>
+      <div className='product-list-container'>
       {
         products.productList.map((item : product, index) => (
           <div>
@@ -39,6 +47,7 @@ const Cart = () => {
           </div>
         ))
       }
+      </div>
     </div>
   )
 }
