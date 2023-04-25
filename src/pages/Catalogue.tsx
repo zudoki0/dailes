@@ -58,7 +58,7 @@ const Catalogue = () => {
           ))
         }
       </div>
-      <div className="list">
+      <div className='item-container'>
       <div className="dropdown">
         <button className="dropbtn">{sortBy}</button>
         <div className="dropdown-content">
@@ -73,6 +73,7 @@ const Catalogue = () => {
           </div>
         </div>
       </div>
+      <div className='prod-container'>
       {
         prod.map((item, index) => (
           <Product
@@ -88,6 +89,7 @@ const Catalogue = () => {
           />
         ))
       }
+      </div>
       </div>
     </div>
     

@@ -7,7 +7,7 @@
     position: relative;
     display: flex;
     color: black;
-    width: 200px;
+    min-width: 200px;
     height: 40px;
     font-size: 16px;
     font-weight: bold;
@@ -20,4 +20,14 @@
 
 .category:hover {
     transform: scale(1.05);
+}
+
+.item-container {
+    width: 80%;
+    position: absolute;
+    margin-left: 200px;
+}
+
+.prod-container {
+    margin-bottom: 200px;
 }
