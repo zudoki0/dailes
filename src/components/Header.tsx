@@ -1,12 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/header.css'
 import { products } from '../assets/data';
+import { useSelector } from 'react-redux';
+import { store } from '../redux/store';
 
 const Header = () => {
+    useSelector((state:any) => state.cart)
     const [text, setText] = useState('');
     const [isTyping, setIsTyping] = useState(false);
 
+    const amount = store.getState().cart.totalAmount;
     let prod = products;
     prod = prod.filter((item) => {
         let temp = item.title.toLowerCase();
@@ -61,9 +65,13 @@ const Header = () => {
                         Katalogas
                     </div>
                 </Link>
+
                 <Link to='/cart'>
-                    <div className='links'>
-                        Krepšelis
+                    <div className='cart-image'>
+                        {
+                        amount === 0 ? '' : <div className='badge'>{amount}</div>
+                        }
+                        <img src='https://cdn-icons-png.flaticon.com/512/34/34627.png' alt='Krepšelis'/>
                     </div>
                 </Link>
             </div>

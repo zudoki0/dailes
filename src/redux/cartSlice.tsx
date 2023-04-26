@@ -30,9 +30,21 @@ const cartSlice = createSlice({
                 state.productList.splice(itemIndex, 1);
             }
         },
+        plusItemToCart(state, action: PayloadAction<product>) {
+            const itemIndex = state.productList.findIndex((item) => item.title === action.payload.title);
+            state.productList[itemIndex].cartQuantity++;
+            state.totalAmount++;
+            state.totalPrice += state.productList[itemIndex].price;
+        },
+        minusItemToCart(state, action: PayloadAction<product>) {
+            const itemIndex = state.productList.findIndex((item) => item.title === action.payload.title);
+            state.productList[itemIndex].cartQuantity--;
+            state.totalAmount--;
+            state.totalPrice -= state.productList[itemIndex].price;
+        }
     }
 })
 
-export const {addToCart, removeFromCart} = cartSlice.actions;
+export const {addToCart, removeFromCart, plusItemToCart, minusItemToCart} = cartSlice.actions;
 
 export default cartSlice.reducer;

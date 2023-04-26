@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import {store} from '../redux/store'
 import { product } from '../interfaces/interfaces';
 import CartData from '../components/CartData'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { removeFromCart } from '../redux/cartSlice'
 import '../styles/cart.css'
 import OrderButton from '../components/OrderButton';
 
 const Cart = () => {
+  useSelector((state:any) => state.cart)
+
   const [visible, setVisible] = useState(true);
   const products = store.getState().cart;
   const dispatch = useDispatch();
@@ -15,6 +17,7 @@ const Cart = () => {
       dispatch(removeFromCart(item));
       if(visible === true) setVisible(false); else setVisible(true);
   }
+  
   return (
     <div className='list'>
       <div className='cart-info-container'>
