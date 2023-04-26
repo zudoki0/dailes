@@ -12,6 +12,9 @@ const Catalogue = () => {
   const [filter, setFilter] = useState('');
   const [sortBy, setSortBy] = useState('Populiariausios prekės');
   
+  const [minValue, setMinValue] = React.useState(0);
+  const [maxValue, setMaxValue] = React.useState(1000);
+
   const changeProduct = (item:string) => {
     switch(item) {
       case 'Populiariausios prekės':
@@ -34,8 +37,13 @@ const Catalogue = () => {
 
   changeProduct(sortBy);
 
-  if (filter !== '') prod = prod.filter((item) => item.category === filter);
-  else prod = products;
+  if (filter !== '') {
+    prod = prod.filter((item) => item.category === filter);
+  }
+  else {
+    prod = products;
+    prod = prod.filter((item) => item.price >= minValue && item.price <= maxValue);
+  }
 
   const changeSortBy = (item:string) => {
     setSortBy(item);
@@ -44,6 +52,20 @@ const Catalogue = () => {
   const changeFilter = (item:string) => {
     setFilter(item);
   }
+
+  const handleMinChange = (event:any) => {
+    event.preventDefault();
+    const value = parseFloat(event.target.value);
+    const newMinVal = Math.min(value, maxValue - 10);
+    setMinValue(newMinVal);
+  };
+
+  const handleMaxChange = (event:any) => {
+    event.preventDefault();
+    const value = parseFloat(event.target.value);
+    const newMaxVal = Math.max(value, minValue + 10);
+    setMaxValue(newMaxVal);
+  };
 
   return (
     <div className='catalogue-body'>
@@ -58,6 +80,7 @@ const Catalogue = () => {
           ))
         }
       </div>
+      <div className='price-container'>Kaina nuo {minValue} € iki {maxValue} €</div>
       <div className='item-container'>
       <div className="dropdown">
         <button className="dropbtn">{sortBy}</button>
@@ -72,6 +95,27 @@ const Catalogue = () => {
             Kaina nuo didžiausios
           </div>
         </div>
+      </div>
+      <div className='range-slider'>
+        <div className='slider-min'>{minValue}</div>
+        <div className='slider-max'>{maxValue}</div>
+
+        <input
+          type="range"
+          value={minValue}
+          min={0}
+          max={1000}
+          step={10}
+          onChange={handleMinChange}
+        />
+        <input
+          type="range"
+          value={maxValue}
+          min={0}
+          max={1000}
+          step={10}
+          onChange={handleMaxChange}
+        />
       </div>
       <div className='prod-container'>
       {
