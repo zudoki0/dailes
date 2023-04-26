@@ -42,8 +42,9 @@ const Catalogue = () => {
   }
   else {
     prod = products;
-    prod = prod.filter((item) => item.price >= minValue && item.price <= maxValue);
   }
+
+  prod = prod.filter((item) => item.price >= minValue && item.price <= maxValue);
 
   const changeSortBy = (item:string) => {
     setSortBy(item);
