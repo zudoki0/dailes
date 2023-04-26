@@ -29,7 +29,7 @@ const Footer = () => {
         Nav.map((item) => (
             <div>
                 <Link to={item.path}>
-                    <span>
+                    <span className='links'>
                         {item.display}
                     </span>
                 </Link>

@@ -37,3 +37,32 @@
 .links {
     color: black;
 }
+
+.search-bar-container {
+    margin-left: 40px;
+}
+
+
+.search-bar {
+    font-family: "Rubik", sans-serif;
+    min-height: 20px;
+    width: 300px;
+    border-radius: 30px;
+    border: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.search-content-container {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    display: block;
+    position: absolute;
+    background-color: #ffffff;
+    padding-left: 2px;
+    min-width: 280px;
+    z-index: 1;
+    font-family: "Rubik", sans-serif;
+}

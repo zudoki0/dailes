@@ -44,7 +44,7 @@
     text-align: center;
     font-weight: bold;
     margin: 30px;
-    height: 500px;
+    height: 520px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
@@ -52,6 +52,8 @@
 }
 
 .dropbtn2 {
+    margin-right: 10px;
+    margin-left: 10px;
     width: 240px;
     height: 30px;
     font-weight: bold;
@@ -68,6 +70,8 @@
 }
 
 .dropdown-content2 {
+    margin-right: 10px;
+    margin-left: 10px;
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -97,4 +101,16 @@
 
 .product-total-container {
     margin-bottom: 180px;
+}
+
+.pay-button {
+    margin-top: 20px;
+    background-color: white;
+    border: solid 1px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    font-family: "Rubik", sans-serif;
+    padding-left: 10px;
+    padding-right: 10px;
 }

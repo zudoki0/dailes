@@ -3,13 +3,19 @@ import { store } from '../redux/store'
 import OrderData from '../components/OrderData';
 import { product } from '../interfaces/interfaces';
 import '../styles/order.css'
+import { Link } from 'react-router-dom';
 
 const Order = () => {
   const [delivery, setDelivery] = useState('Pristatymas į namus');
+  const [payment, setPayment] = useState('El. bankininkystė');
   const products = store.getState().cart;
 
   const changeDelivery = (item: string) => {
     setDelivery(item);
+  }
+
+  const changePayment = (item: string) => {
+    setPayment(item);
   }
 
   return (
@@ -33,8 +39,27 @@ const Order = () => {
             </div>
           </div>
         </div>
+        <div className="dropdown2">
+        <div className='input-container-2'>Apmokėjimo būdas</div>
+          <button className="dropbtn2">{payment}</button>
+          <div className="dropdown-content2">
+            <div onClick={() => changePayment('El. bankininkystė')}>
+            El. bankininkystė
+            </div>
+            <div onClick={() => changePayment('Bankinė kortelė')}>
+            Bankinė kortelė
+            </div>
+          </div>
+        </div>
         {
           delivery === 'Pristatymas į namus' ? <div className='input-container'>Pristatymo adresas<input className='input-bar'></input></div> : <div className='input-container-3'>Parduotuvė yra Savanorių pr. 16, Vilnius</div>      }
+        
+        <div className='pay-button-container'>
+          <Link to='payment'>
+            <button className='pay-button'>Apmokėti</button>
+          </Link>
+        </div>
+
       </div>
       <div className='item-total'> Iš viso prekių: {products.totalAmount} vnt. </div>
       <div className='item-total'>  Iš viso kaina: {Math.abs(products.totalPrice).toFixed(2)} € </div> 
