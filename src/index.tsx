@@ -9,10 +9,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+document.title = 'Dailės prekių parduotuvė'
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Layout/>
-    </Provider> 
+    </Provider>
   </React.StrictMode>
 );
