@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/header.css'
 import { products } from '../assets/data';
@@ -17,7 +17,18 @@ const Header = () => {
         event.preventDefault();
         const value = event.target.value;
         setText(value.toLowerCase());
+        setIsTyping(true);
     };
+
+    useEffect(() => {
+
+        const closeDropdown = (event:any) => {
+            setIsTyping(false);
+        }
+        document.body.addEventListener('click', closeDropdown);
+
+        return () => document.body.removeEventListener('click', closeDropdown);
+    }, [])
 
   return (
     <div className = "header">
@@ -33,7 +44,11 @@ const Header = () => {
                     isTyping ? <div className='search-content-container'>
                     {
                         prod.map((item, index) => (
-                            <div className='search-content'>{item.title}</div>
+                            <div className='search-content'>
+                                <Link to={`/catalogue/${item.slur}`}>
+                                <div className='search-content'>{item.title}</div>
+                                </Link>
+                            </div>
                         ))
                     }
     

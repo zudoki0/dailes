@@ -53,6 +53,9 @@
     padding-right: 10px;
     position: relative;
 }
+.search-content {
+    color: black;
+}
 
 .search-content-container {
     margin-right: 10px;
