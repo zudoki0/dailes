@@ -21,7 +21,7 @@ export const products = [
     },
     {
       title: "Spalvotas popierius 10x10cm",
-      price: 29.99,
+      price: 0.29,
       image: "https://www.officewarehouse.com.ph/__resources/_web_data_/products/products/image_gallery/6996_6401.jpg",
       slur: "3",
       description: "Spalvotas biuro popierius",
@@ -30,7 +30,7 @@ export const products = [
       rating: 197,
     },
     {
-      title: "Molbertas-platus su atlenkamu staliuku",
+      title: "Molbertas-platus",
       price: 69.99,
       image: "https://vunder.ee/media/extra_6630.jpg",
       slur: "4",
